@@ -16,23 +16,23 @@ Note: We're not concerned with pixel-perfect, or design best practices – but i
 
 ### Instructions
 
-Using any version of [Github's API](https://developer.github.com/) make authenticated requests to fetch users and display them in a directory.
-Clicking on a user displays a modal with further user information.
+Using any version of [Github's API](https://developer.github.com/) make authenticated requests to fetch users and display them in a directory. The list of users could be the authenticated user's followers or following or something else entirely. The important part is that the authenticated user is included in the list of users.
+Clicking on any user displays a modal with further user information.
 When viewing the user that is logged in, the bio should be editable, and should update upon save.
 
 ##### Directory Requirements
 
 * Display a list of usernames and their avatars
-* A way to open the modal for each user in the directory
+* A way to open a view for each user in the directory
 
-##### Modal Requirements
+##### User View Requirements
 
 * Ability to view the selected user's username
 * Ability to view the selected user's Avatar
 * Ability to view the selected user's Bio
 * Ability to edit Bio for the currently authenticated user
 * Ability to save any changes
-* Ability to close the modal
+* Ability to close the user view
 
 ##### Constraints and Considerations
 
@@ -41,7 +41,7 @@ When viewing the user that is logged in, the bio should be editable, and should 
 * Leverage CSS and show off what you are capable of, animations and transitions are appreciated.
 * Consider performance and scalability when interacting with GitHub and storing data.
 * Create git commits as you proceed in development and reach stable checkpoints.
-* Only add bonus' after you've met the requirements.
+* Only add bonus' after you've met the requirements (with the exception of Github's GraphQL API v4).
 
 ##### Bonus (Optional)
 * Routing for pagination and modal
