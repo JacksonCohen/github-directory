@@ -41,7 +41,7 @@ When viewing the user that is logged in, the bio should be editable, and should 
 * Leverage CSS and show off what you are capable of, animations and transitions are appreciated.
 * Consider performance and scalability when interacting with GitHub and storing data.
 * Create git commits as you proceed in development and reach stable checkpoints.
-* Only add bonus' after you've met the requirements (with the exception of Github's GraphQL API v4).
+* Only add bonus' after you've met the requirements.
 
 ##### Bonus (Optional)
 * Routing for pagination and modal
