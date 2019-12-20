@@ -1,23 +1,24 @@
 import * as types from './actionTypes';
+import User from '../interfaces/User.interface';
 
-export const updateSearchCriteria = (e: any) => ({
+export const updateSearchCriteria = (criteria: string): types.AppActions => ({
   type: types.UPDATE_SEARCH_CRITERIA,
-  payload: e.target.value
+  criteria
 });
 
-export const setAuthenticatedUserInfo = (user: object) => ({
+export const setAuthenticatedUserInfo = (user: User): types.AppActions => ({
   type: types.SET_AUTHENTICATED_USER_INFO,
-  payload: user
+  user
 });
 
-export const setCurrentUserView = (user: object) => ({
+export const setCurrentUserView = (user: User): types.AppActions => ({
   type: types.SET_CURRENT_USER_VIEW,
-  payload: user
+  user
 });
 
-export const updateUserList = (users: Array<object>) => ({
+export const updateUserList = (users: User[]): types.AppActions => ({
   type: types.UPDATE_USER_LIST,
-  payload: users
+  users
 });
 
 export const showUserModal = () => ({ type: types.SHOW_USER_MODAL });
