@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
+import UserProfile from '../interfaces/User.interface';
 
-export class UserProfile extends Component {
-  render() {
-    return <div></div>;
-  }
+function UserProfile(props: UserProfile) {
+  return <div></div>;
 }
 
 export default UserProfile;

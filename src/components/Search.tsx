@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class Search extends Component {
-  render() {
-    return <div></div>;
-  }
+function Search() {
+  return <div></div>;
 }
 
 export default Search;
