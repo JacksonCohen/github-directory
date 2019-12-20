@@ -13,3 +13,5 @@ export interface HideModalAction {
   type: typeof HIDE_USER_MODAL;
   modal: Modal;
 }
+
+export type ModalActionTypes = ShowModalAction | HideModalAction;

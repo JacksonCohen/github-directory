@@ -25,3 +25,9 @@ export interface UpdateUserListAction {
   type: typeof UPDATE_USER_LIST;
   users: User[];
 }
+
+export type UserActionTypes =
+  | SetUserAction
+  | SetAuthenticatedUserInfoAction
+  | SetCurrentUserViewAction
+  | UpdateUserListAction;

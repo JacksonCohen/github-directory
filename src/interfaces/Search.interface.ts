@@ -8,3 +8,5 @@ export interface UpdateSearchCriteriaAction {
   type: typeof UPDATE_SEARCH_CRITERIA;
   criteria: string;
 }
+
+export type SearchCriteriaActionTypes = UpdateSearchCriteriaAction;
