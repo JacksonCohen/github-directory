@@ -2,12 +2,12 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import userReducer from './userReducer';
 import searchReducer from './searchReducer';
-import viewReducer from './viewReducer';
+import modalReducer from './modalReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
   searchCriteria: searchReducer,
-  modal: viewReducer
+  modal: modalReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

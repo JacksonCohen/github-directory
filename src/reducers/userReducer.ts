@@ -1,25 +1,26 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import UserProfile from '../interfaces/User.interface';
+import {
+  UPDATE_USER_LIST,
+  SET_AUTHENTICATED_USER_INFO,
+  SET_CURRENT_USER_VIEW
+} from '../actions/actionTypes';
+import User from '../interfaces/User.interface';
+import { UserActionTypes } from '../interfaces/SetUser.interface';
 
-type InitialState = {} & UserProfile;
-
-let initialState: InitialState = {
+let initialState: User = {
   username: '',
   avatar: '',
   bio: ''
 };
 
-const userSlice = createSlice({
-  name: 'issuesDisplay',
-  initialState,
-  reducers: {
-    setUserName(state, action: PayloadAction<UserProfile>) {
-      const { username } = action.payload;
-      state.username = username;
-    }
+export default (state = initialState, action: UserActionTypes) => {
+  switch (action.type) {
+    case UPDATE_USER_LIST:
+    // return { ...state, user: action.users };
+    case SET_AUTHENTICATED_USER_INFO:
+    // return { ...state, userList: action.user };
+    case SET_CURRENT_USER_VIEW:
+    // return { ...state, user: action.user };
+    default:
+      return state;
   }
-});
-
-export const { setUserName } = userSlice.actions;
-
-export default userSlice.reducer;
+};
