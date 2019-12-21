@@ -2,9 +2,15 @@ import React, { useEffect } from 'react';
 import { useModal, useUserList } from './hooks';
 import data from './assets/data';
 import Login from './components/Login';
+import Modal from './components/Modal';
 import Search from './components/Search';
 import UserList from './components/UserList';
 import styled from 'styled-components';
+
+const Container = styled.div`
+  justify-content: center;
+  margin: auto;
+`;
 
 const App = () => {
   console.log(data, 'app data');
@@ -33,11 +39,12 @@ const App = () => {
   // }, []);
 
   return (
-    <div>
+    <Container>
       <Search />
       <UserList users={data} />
-      <Login />
-    </div>
+      <Modal show={true} />
+      {/* <Login /> */}
+    </Container>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 const GitHubLogIn = styled.a`
@@ -11,13 +11,11 @@ const GitHubLogIn = styled.a`
 
 const Login = () => {
   return (
-    <div>
-      <div className='log-in'>
-        <GitHubLogIn href='https://github.com/login/oauth/authorize?client_id=6f7c14d6f3a82966cbb6'>
-          Sign In Using GitHub
-        </GitHubLogIn>
-      </div>
-    </div>
+    <Fragment>
+      <GitHubLogIn href='https://github.com/login/oauth/authorize?client_id=6f7c14d6f3a82966cbb6'>
+        Sign In Using GitHub
+      </GitHubLogIn>
+    </Fragment>
   );
 };
 
