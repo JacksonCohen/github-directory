@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useModal, useUserList } from './hooks';
+import data from './assets/data';
+import Login from './components/Login';
 import Search from './components/Search';
 import UserList from './components/UserList';
+import styled from 'styled-components';
 
 const App = () => {
+  console.log(data, 'app data');
+  // const { userList } = useUserList('jacksoncohen');
   // const getAccessToken = async () => {
   //   const url = 'https://github.com/login/oauth/access_token';
   //   const data = { username: 'example' };
@@ -23,22 +28,15 @@ const App = () => {
   //   }
   // };
 
-  useEffect(() => {
-    const fetchUsers = (username: string) => {
-      fetch(`https://api.github.com/users/${username}/followers`)
-        .then(raw => raw.json())
-        .then(data => console.log(data));
-    };
-    fetchUsers('jacksoncohen');
-  }, []);
+  // useEffect(() => {
+  //   useUserList('jacksoncohen');
+  // }, []);
 
   return (
     <div>
-      <div className='sign-in'>
-        <a href='https://github.com/login/oauth/authorize?client_id=6f7c14d6f3a82966cbb6'>
-          Sign In Using GitHub
-        </a>
-      </div>
+      <Search />
+      <UserList users={data} />
+      <Login />
     </div>
   );
 };

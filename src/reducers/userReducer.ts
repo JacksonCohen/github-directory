@@ -7,8 +7,8 @@ import User from '../interfaces/User.interface';
 import { UserActionTypes } from '../interfaces/SetUser.interface';
 
 let initialState: User = {
-  username: '',
-  avatar: '',
+  login: '',
+  avatar_url: '',
   bio: ''
 };
 
