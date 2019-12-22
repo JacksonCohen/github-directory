@@ -4,11 +4,23 @@ import UserListCard from '../UserListCard/UserListCard';
 
 import { Container } from './styles';
 
-const UserList = ({ users }: any) => {
+interface Props {
+  users: User[];
+  handleClick: any;
+}
+
+const UserList = ({ users, handleClick }: Props) => {
   return (
     <Container>
       {users.map((user: User) => {
-        return <UserListCard key={user.id} username={user.login} avatar={user.avatar_url} />;
+        return (
+          <UserListCard
+            key={user.id}
+            username={user.login}
+            avatar={user.avatar_url}
+            handleClick={handleClick}
+          />
+        );
       })}
     </Container>
   );

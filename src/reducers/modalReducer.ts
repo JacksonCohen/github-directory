@@ -2,7 +2,7 @@ import { SHOW_USER_MODAL, HIDE_USER_MODAL } from '../actions/actionTypes';
 import { Modal, ModalActionTypes } from '../interfaces/Modal.interface';
 
 const initialState: Modal = {
-  isModalShowing: false
+  isModalShowing: true
 };
 
 export default (state = initialState, action: ModalActionTypes) => {

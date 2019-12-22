@@ -10,7 +10,7 @@ import { showUserModal } from '../../actions/actions';
 import { Container } from './styles';
 
 const App = () => {
-  // const { isModalOpen } = useModal();
+  const { isModalShowing, hideUserModal } = useModal();
   // const { setUserList, userList } = useUserList('jacksoncohen');
   // const { isAuthenticated } = useAuthenticatedUser();
   // console.log(userList);
@@ -35,6 +35,7 @@ const App = () => {
   // };
 
   // useEffect(() => {}, []);
+  const handleClick = () => console.log('Handleclick invoked in app');
 
   return (
     <Container>
@@ -43,8 +44,8 @@ const App = () => {
       ) : (
         <Fragment>
           <Search />
-          <UserList users={data} />
-          <Modal />
+          <UserList users={data} handleClick={handleClick} />
+          {isModalShowing && <Modal />}
         </Fragment>
       )}
     </Container>

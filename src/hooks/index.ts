@@ -17,14 +17,17 @@ export const useUserList = (username: string): any => {
     });
 };
 
-// export const useUserModal = () => {
-//   const dispatch = useDispatch();
-//   const { setCurrentUserView } = useSelector((state: AppState) => state.user);
+export const useUserModal = () => {
+  const dispatch = useDispatch();
+  const { login, avatar_url, bio } = useSelector((state: AppState) => state.user);
 
-//   return {
-//     setCurrentUserView
-//   };
-// };
+  return {
+    login,
+    avatar_url,
+    bio
+    // setUserModal: dispatch
+  };
+};
 
 // get authenticated user
 // export const useAuthenticatedUser = (): {

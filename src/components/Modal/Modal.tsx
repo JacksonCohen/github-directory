@@ -1,4 +1,5 @@
 import React from 'react';
+import { useModal } from '../../hooks';
 
 import {
   Avatar,
@@ -13,6 +14,8 @@ import {
 } from './styles';
 
 const Modal = () => {
+  const { hideUserModal } = useModal();
+
   return (
     <Container>
       <Avatar src='https://avatars3.githubusercontent.com/u/36962434?v=4' />
@@ -32,7 +35,7 @@ const Modal = () => {
           {/* {bio} */}
         </Bio>
       </ProfileFields>
-      <Exit>&times;</Exit>
+      <Exit onClick={() => hideUserModal()}>&times;</Exit>
     </Container>
   );
 };
