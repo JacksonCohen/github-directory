@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../actions/actionTypes';
 import { AppState } from '../store';
-import { User } from '../interfaces/SetUser.interface';
 
 export const useUserList = (username: string): any => {
   const dispatch = useDispatch();
@@ -17,31 +16,42 @@ export const useUserList = (username: string): any => {
     });
 };
 
-export const useUserModal = () => {
+export const useUserModal = (): {
+  login: string;
+  avatar_url: string;
+  bio: string;
+  setUserModal: Function;
+} => {
   const dispatch = useDispatch();
-  const { login, avatar_url, bio } = useSelector((state: AppState) => state.user);
+  const userState = useSelector((state: AppState) => state.user);
+  const { login, avatar_url } = userState;
+  const bio = userState.bio || '';
 
   return {
     login,
     avatar_url,
-    bio
-    // setUserModal: dispatch
+    bio,
+    setUserModal: (login: string, avatar_url: string, bio: string) => {
+      console.log(login, avatar_url, bio);
+      return dispatch({ type: types.SET_CURRENT_USER_VIEW, login, avatar_url, bio });
+    }
   };
 };
 
 // get authenticated user
-// export const useAuthenticatedUser = (): {
-//   isAuthenticated: boolean;
-//   markUserAuthenticated: Function;
-// } => {
-//   const dispatch = useDispatch();
-//   const { isAuthenticated } = useSelector((state: AppState) => state.isAuthenticated);
+export const useAuthenticatedUser = (): {
+  isAuthenticated: boolean;
+  markUserAuthenticated: Function;
+} => {
+  const dispatch = useDispatch();
+  const userState = useSelector((state: AppState) => state.user);
+  const isAuthenticated = userState.isAuthenticated || false;
 
-//   return {
-//     isAuthenticated,
-//     markUserAuthenticated: () => dispatch({ type: types.MARK_USER_AUTHENTICATED })
-//   };
-// };
+  return {
+    isAuthenticated,
+    markUserAuthenticated: () => dispatch({ type: types.MARK_USER_AUTHENTICATED })
+  };
+};
 
 export const useModal = (): {
   isModalShowing: boolean;

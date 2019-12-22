@@ -16,14 +16,14 @@ const initialState: User = {
 
 export default (state = initialState, action: UserActionTypes) => {
   switch (action.type) {
-    case UPDATE_USER_LIST:
-    // return { ...state, user: action.users };
     case MARK_USER_AUTHENTICATED:
-    // return { ...state, isAuthenticated: true };
+      return { ...state, isAuthenticated: true };
+    case UPDATE_USER_LIST:
+      return { ...state, user: action.users };
     case SET_AUTHENTICATED_USER_INFO:
-    // return { ...state, userList: action.user };
+      return { ...state, userList: action.user };
     case SET_CURRENT_USER_VIEW:
-    // return { ...state, user: action.user };
+      return { ...state, user: action.user };
     default:
       return state;
   }
