@@ -9,9 +9,9 @@ export const GitHubLogIn = styled.a`
   background: #484848;
   padding: 20px 15px;
   position: fixed;
-  top: 65%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
 
   &:hover {
     color: black;

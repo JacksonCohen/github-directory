@@ -1,17 +1,12 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, CriteriaSelector } from './styles';
 
 const Search = () => {
   return (
     <Container>
-      <select>
-        <option disabled selected hidden>
-          Select your search criteria
-        </option>
-        <option>Followers</option>
-        <option>Following</option>
-      </select>
+      <CriteriaSelector>Following</CriteriaSelector>
+      <CriteriaSelector>Followers</CriteriaSelector>
     </Container>
   );
 };

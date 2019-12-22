@@ -1,21 +1,29 @@
 import React, { Fragment } from 'react';
+import { useUserModal } from '../../hooks';
 
 import { Avatar, Username, UserProfile, ViewMore } from './styles';
 
 const UserListCard = ({
-  username,
-  avatar,
+  login,
+  avatar_url,
   handleClick
 }: {
-  username: string;
-  avatar: string;
+  login: string;
+  avatar_url: string;
   handleClick: any;
 }) => {
+  const { setUserModal } = useUserModal();
+
   return (
     <Fragment>
-      <UserProfile onClick={handleClick}>
-        <Avatar src={avatar} />
-        <Username>{username}</Username>
+      <UserProfile
+        onClick={() => {
+          setUserModal(login, avatar_url);
+          handleClick();
+        }}
+      >
+        <Avatar src={avatar_url} />
+        <Username>{login}</Username>
         <ViewMore>View More</ViewMore>
       </UserProfile>
     </Fragment>

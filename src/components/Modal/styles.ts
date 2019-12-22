@@ -41,7 +41,7 @@ export const Avatar = styled.img`
 
 export const NameField = styled.div`
   align-items: center;
-  margin: 16px 30px 10px 30px;
+  margin: 0 30px 10px 30px;
   border-bottom: 1px solid #000;
   width: 80%;
   color: #b3b8bc;

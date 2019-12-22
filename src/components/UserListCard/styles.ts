@@ -10,6 +10,7 @@ export const UserProfile = styled.div`
   text-align: center;
   background: #252525;
   color: #b3b8bc;
+  cursor: pointer;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.08) 0px 10px 40px 2px;
@@ -18,6 +19,7 @@ export const UserProfile = styled.div`
 
   @media (max-width: 768px) {
     width: 25%;
+    max-height: 8rem;
   }
 `;
 

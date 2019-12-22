@@ -16,8 +16,8 @@ const UserList = ({ users, handleClick }: Props) => {
         return (
           <UserListCard
             key={user.id}
-            username={user.login}
-            avatar={user.avatar_url}
+            login={user.login}
+            avatar_url={user.avatar_url}
             handleClick={handleClick}
           />
         );
