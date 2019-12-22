@@ -4,7 +4,7 @@ const token = sessionStorage.getItem('access-token');
 
 export default (bio: string) => {
   axios
-    .patch('/user', {
+    .patch('https://api.github.com/user', {
       bio,
       headers: {
         Authorization: `token ${token}`

@@ -13,6 +13,20 @@ export const useUserList = (username: string): any => {
   };
 };
 
+export const useSearchCriteria = (): {
+  criteria: string;
+  updateSearchCriteria: any;
+} => {
+  const dispatch = useDispatch();
+  const criteria = useSelector((state: AppState) => state.searchCriteria.criteria);
+
+  return {
+    criteria,
+    updateSearchCriteria: (target: string) =>
+      dispatch({ type: types.UPDATE_SEARCH_CRITERIA, criteria: target })
+  };
+};
+
 export const useUserModal = (): {
   login: string;
   avatar_url: string;

@@ -8,7 +8,7 @@ const initialState: Search = {
 export default (state = initialState, action: SearchCriteriaActionTypes) => {
   switch (action.type) {
     case UPDATE_SEARCH_CRITERIA:
-      return { ...state, searchQuery: action.criteria };
+      return { ...state, criteria: action.criteria };
     default:
       return state;
   }
