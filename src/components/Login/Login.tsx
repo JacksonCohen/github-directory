@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
 import getAccessToken from '../../lib/getAccessToken';
-import { useAuthenticatedUser } from '../../hooks';
+import { useAuthenticatedUser, useAuthenticatedUserInfo } from '../../hooks';
 
 import { GitHubLogIn } from './styles';
 
 const Login = () => {
   const { markUserAuthenticated } = useAuthenticatedUser();
+  const { setAuthenticatedUserInfo } = useAuthenticatedUserInfo();
   return (
     <Fragment>
       <GitHubLogIn
@@ -13,6 +14,7 @@ const Login = () => {
         onClick={() => {
           getAccessToken().then(() => {
             markUserAuthenticated();
+            setAuthenticatedUserInfo();
           });
         }}
       >

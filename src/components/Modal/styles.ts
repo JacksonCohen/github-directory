@@ -82,6 +82,7 @@ export const Edit = styled.img`
   position: absolute;
   width: 20px;
   left: 83%;
+  cursor: pointer;
 `;
 
 export const SaveContainer = styled.div`

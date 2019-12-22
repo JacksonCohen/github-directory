@@ -29,8 +29,10 @@ export const useUserModal = (): {
     login,
     avatar_url,
     bio,
-    setUserModal: (login: string, avatar_url: string, bio: string) =>
-      dispatch({ type: types.SET_CURRENT_USER_VIEW, login, avatar_url, bio })
+    setUserModal: (login: string, avatar_url: string, bio: string) => {
+      dispatch({ type: types.SET_CURRENT_USER_VIEW, login, avatar_url, bio });
+      console.log(login, avatar_url, bio);
+    }
   };
 };
 
@@ -50,12 +52,15 @@ export const useAuthenticatedUser = (): {
   };
 };
 
-export const useAuthenticatedUserData = () => {
+export const useAuthenticatedUserInfo = () => {
   const dispatch = useDispatch();
   const { login, avatar_url, bio } = useSelector((state: AppState) => state.user);
 
   return {
-    setAuthenticatedUserData: dispatch
+    login,
+    avatar_url,
+    bio,
+    setAuthenticatedUserInfo: () => dispatch({ type: types.SET_AUTHENTICATED_USER_INFO })
   };
 };
 

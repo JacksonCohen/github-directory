@@ -10,7 +10,7 @@ export interface User {
   avatar_url: string;
   bio?: string;
   isAuthenticated?: boolean;
-  id: number;
+  id?: number;
 }
 export interface SetAuthenticatedUserInfoAction {
   type: typeof SET_AUTHENTICATED_USER_INFO;

@@ -17,7 +17,7 @@
     "start": "react-scripts start",
     "start-dev": "node server/server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -36,8 +36,10 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^24.0.24",
     "@types/react-redux": "^7.1.5",
     "@types/styled-components": "^4.4.1",
+    "ts-jest": "^24.2.0",
     "typescript": "^3.7.3"
   },
   "description": "Please send the completed project within 3 days. Let us know if you require more time.",

@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
-import { useModal } from '../../hooks';
 import updateBio from '../../lib/updateBio';
+import { User } from '../../interfaces/SetUser.interface';
 
 import {
   Avatar,
@@ -17,7 +17,10 @@ import {
   Username
 } from './styles';
 
-class Modal extends Component<{}, { editMode: boolean; bio: string }> {
+class Modal extends Component<
+  { user: User; hideUserModal: any },
+  { editMode: boolean; bio: string }
+> {
   constructor(props: any) {
     super(props);
 
@@ -50,6 +53,7 @@ class Modal extends Component<{}, { editMode: boolean; bio: string }> {
 
   render() {
     const { bio, editMode } = this.state;
+    const { hideUserModal } = this.props;
 
     return (
       <Container>
@@ -69,7 +73,7 @@ class Modal extends Component<{}, { editMode: boolean; bio: string }> {
               <Fragment>
                 <BioEditor value={bio} onChange={this.handleChange} />
                 <SaveContainer>
-                  <Save>Save</Save>
+                  <Save onClick={() => updateBio(bio)}>Save</Save>
                 </SaveContainer>
               </Fragment>
             ) : (
@@ -78,7 +82,7 @@ class Modal extends Component<{}, { editMode: boolean; bio: string }> {
             {/* {bio} */}
           </Bio>
         </ProfileFields>
-        <Exit>&times;</Exit>
+        <Exit onClick={hideUserModal}>&times;</Exit>
       </Container>
     );
   }

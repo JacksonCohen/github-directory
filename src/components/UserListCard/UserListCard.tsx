@@ -6,10 +6,12 @@ import { Avatar, Username, UserProfile, ViewMore } from './styles';
 const UserListCard = ({
   login,
   avatar_url,
+  bio,
   handleClick
 }: {
   login: string;
   avatar_url: string;
+  bio: string | undefined;
   handleClick: any;
 }) => {
   const { setUserModal } = useUserModal();
@@ -18,7 +20,7 @@ const UserListCard = ({
     <Fragment>
       <UserProfile
         onClick={() => {
-          setUserModal(login, avatar_url);
+          setUserModal(login, avatar_url, bio);
           handleClick();
         }}
       >

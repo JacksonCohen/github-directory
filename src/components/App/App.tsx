@@ -11,11 +11,11 @@ import { Container } from './styles';
 
 const App = () => {
   const { isAuthenticated } = useAuthenticatedUser();
-  const { isModalShowing, showUserModal } = useModal();
-  const { setUserModal } = useUserModal();
+  const { isModalShowing, showUserModal, hideUserModal } = useModal();
+  const { login, avatar_url, bio, setUserModal } = useUserModal();
 
   useEffect(() => {
-    getUserLists();
+    getUserLists('followers');
   }, []);
 
   const handleClick = () => {
@@ -31,7 +31,9 @@ const App = () => {
         <Fragment>
           <Search />
           <UserList users={data} handleClick={handleClick} />
-          {isModalShowing && <Modal />}
+          {isModalShowing && (
+            <Modal hideUserModal={hideUserModal} user={{ login, avatar_url, bio }} />
+          )}
         </Fragment>
       )}
     </Container>

@@ -14,6 +14,7 @@ export const CriteriaSelector = styled.a`
   background: #484848;
   padding: 10px 5px;
   margin: 10px;
+  cursor: pointer;
 
   &:hover {
     color: black;
