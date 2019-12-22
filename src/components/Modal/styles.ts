@@ -6,7 +6,7 @@ export const Container = styled.div`
   left: 35%;
   top: 25%;
   width: 30%;
-  height: 50%;
+  height: auto;
   border: 1px black solid;
   background: #252525;
   animation-name: animatetop;
@@ -41,7 +41,7 @@ export const Avatar = styled.img`
 
 export const NameField = styled.div`
   align-items: center;
-  margin: 8px 35px;
+  margin: 16px 30px 10px 30px;
   border-bottom: 1px solid #000;
   width: 80%;
   color: #b3b8bc;
@@ -50,13 +50,13 @@ export const NameField = styled.div`
 export const Username = styled.div`
   /* content: ''; */
   flex: 1 1 auto;
-  margin-left: 35px;
+  margin-left: 30px;
   color: #b3b8bc;
 `;
 
 export const BioField = styled.div`
   align-items: center;
-  margin: 8px 35px;
+  margin: 16px 30px 10px 30px;
   border-bottom: 1px solid #000;
   width: 80%;
   color: #b3b8bc;
@@ -65,7 +65,7 @@ export const BioField = styled.div`
 export const Bio = styled.div`
   color: #b3b8bc;
   flex: 1 1 auto;
-  margin-left: 35px;
+  margin: 0 0 30px 30px;
   width: 80%;
 `;
 

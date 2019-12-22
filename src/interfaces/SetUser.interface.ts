@@ -4,8 +4,14 @@ import {
   SET_CURRENT_USER_VIEW,
   UPDATE_USER_LIST
 } from '../actions/actionTypes';
-import User from '../interfaces/User.interface';
 
+export interface User {
+  login: string;
+  avatar_url: string;
+  bio?: string;
+  isAuthenticated?: boolean;
+  id: number;
+}
 export interface SetAuthenticatedUserInfoAction {
   type: typeof SET_AUTHENTICATED_USER_INFO;
   user: User;

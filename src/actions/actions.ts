@@ -1,5 +1,5 @@
 import * as types from './actionTypes';
-import User from '../interfaces/User.interface';
+import { User } from '../interfaces/SetUser.interface';
 
 export const updateSearchCriteria = (criteria: string): types.AppActions => ({
   type: types.UPDATE_SEARCH_CRITERIA,

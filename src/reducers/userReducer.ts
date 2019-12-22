@@ -4,10 +4,9 @@ import {
   SET_AUTHENTICATED_USER_INFO,
   SET_CURRENT_USER_VIEW
 } from '../actions/actionTypes';
-import User from '../interfaces/User.interface';
-import { UserActionTypes } from '../interfaces/SetUser.interface';
+import { User, UserActionTypes } from '../interfaces/SetUser.interface';
 
-let initialState: User = {
+const initialState: User = {
   login: '',
   avatar_url: '',
   bio: '',

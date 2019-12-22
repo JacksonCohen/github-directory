@@ -33,8 +33,11 @@ export const Avatar = styled.img`
 
 export const ViewMore = styled.a`
   font-size: 14px;
-  position: relative;
-  top: 15px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
 
   @media (max-width: 768px) {
     font-size: 10px;

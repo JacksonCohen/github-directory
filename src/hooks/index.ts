@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../actions/actionTypes';
 import { AppState } from '../store';
-import User from '../interfaces/User.interface';
+import { User } from '../interfaces/SetUser.interface';
 
 export const useUserList = (username: string): any => {
   const dispatch = useDispatch();
@@ -17,19 +17,28 @@ export const useUserList = (username: string): any => {
     });
 };
 
-// get authenticated user
-export const useAuthenticatedUser = (): {
-  isAuthenticated: boolean;
-  markUserAuthenticated: Function;
-} => {
-  const dispatch = useDispatch();
-  const { isAuthenticated } = useSelector((state: AppState) => state.isAuthenticated);
+// export const useUserModal = () => {
+//   const dispatch = useDispatch();
+//   const { setCurrentUserView } = useSelector((state: AppState) => state.user);
 
-  return {
-    isAuthenticated,
-    markUserAuthenticated: () => dispatch({ type: types.MARK_USER_AUTHENTICATED })
-  };
-};
+//   return {
+//     setCurrentUserView
+//   };
+// };
+
+// get authenticated user
+// export const useAuthenticatedUser = (): {
+//   isAuthenticated: boolean;
+//   markUserAuthenticated: Function;
+// } => {
+//   const dispatch = useDispatch();
+//   const { isAuthenticated } = useSelector((state: AppState) => state.isAuthenticated);
+
+//   return {
+//     isAuthenticated,
+//     markUserAuthenticated: () => dispatch({ type: types.MARK_USER_AUTHENTICATED })
+//   };
+// };
 
 export const useModal = (): {
   isModalShowing: boolean;
