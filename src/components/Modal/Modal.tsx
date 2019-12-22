@@ -24,7 +24,7 @@ const Modal = () => {
         </Username>
         <BioField>
           Bio
-          <Edit src='https://icons-for-free.com/iconfiles/png/512/edit+pen+pencil+icon-1320183237584811650.png' />
+          <Edit src='https://i.imgur.com/J2p7LEN.png' />
         </BioField>
         <Bio>
           I love coding! JavaScript and React are my favorite. When I'm not coding, you can catch me
