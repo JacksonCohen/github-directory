@@ -1,5 +1,6 @@
 import {
   UPDATE_USER_LIST,
+  MARK_USER_AUTHENTICATED,
   SET_AUTHENTICATED_USER_INFO,
   SET_CURRENT_USER_VIEW
 } from '../actions/actionTypes';
@@ -9,13 +10,17 @@ import { UserActionTypes } from '../interfaces/SetUser.interface';
 let initialState: User = {
   login: '',
   avatar_url: '',
-  bio: ''
+  bio: '',
+  isAuthenticated: false,
+  id: -1
 };
 
 export default (state = initialState, action: UserActionTypes) => {
   switch (action.type) {
     case UPDATE_USER_LIST:
     // return { ...state, user: action.users };
+    case MARK_USER_AUTHENTICATED:
+    // return { ...state, isAuthenticated: true };
     case SET_AUTHENTICATED_USER_INFO:
     // return { ...state, userList: action.user };
     case SET_CURRENT_USER_VIEW:

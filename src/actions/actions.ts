@@ -11,6 +11,11 @@ export const setAuthenticatedUserInfo = (user: User): types.AppActions => ({
   user
 });
 
+export const markUserAuthenticated = (): types.AppActions => ({
+  type: types.MARK_USER_AUTHENTICATED,
+  isAuthenticated: true
+});
+
 export const setCurrentUserView = (user: User): types.AppActions => ({
   type: types.SET_CURRENT_USER_VIEW,
   user
