@@ -7,11 +7,10 @@ export const useUserList = (username: string): any => {
   const userList = useSelector((state: AppState) => state.user);
   // const criteria = useSelector((state: AppState) => state.criteria)
 
-  //   return {
-  //     userList,
-  //     setUserList: dispatch({ type: types.UPDATE_USER_LIST, users })
-  //   };
-  // });
+  return {
+    userList
+    // setUserList: dispatch({ type: types.UPDATE_USER_LIST, users })
+  };
 };
 
 export const useUserModal = (): {

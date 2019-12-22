@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
-import { useModal, useUserList, useUserModal, useAuthenticatedUser } from '../../hooks';
+import { useModal, useUserModal, useAuthenticatedUser } from '../../hooks';
 import getUserLists from '../../lib/getUserLists';
 import data from '../../data';
 import Login from '../Login/Login';
@@ -10,10 +10,9 @@ import UserList from '../UserList/UserList';
 import { Container } from './styles';
 
 const App = () => {
+  const { isAuthenticated } = useAuthenticatedUser();
   const { isModalShowing, showUserModal } = useModal();
   const { setUserModal } = useUserModal();
-  const { isAuthenticated, markUserAuthenticated } = useAuthenticatedUser();
-  // const { setUserList, userList } = useUserList('jacksoncohen');
 
   useEffect(() => {
     getUserLists();

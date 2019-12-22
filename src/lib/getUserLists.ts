@@ -1,7 +1,4 @@
 import axios from 'axios';
-import { useUserList } from '../hooks';
-
-const { setUserList } = useUserList('followers');
 
 export default (criteria: string = 'followers'): Promise<any> => {
   return axios(`https://api.github.com/user/${criteria}`, {

@@ -80,15 +80,21 @@ export const Exit = styled.div`
 
 export const Edit = styled.img`
   position: absolute;
-  right: 10%;
-  top: 40%;
-  width: 5%;
+  width: 20px;
+  left: 83%;
+`;
+
+export const SaveContainer = styled.div`
+  text-align: center;
 `;
 
 export const Save = styled(CriteriaSelector)`
-  display: block;
+  display: inline-block;
   width: 25%;
+  text-align: center;
   cursor: pointer;
+  padding: 3px;
+  background: #252525;
 `;
 
 export const ProfileFields = styled.div`
@@ -98,6 +104,7 @@ export const ProfileFields = styled.div`
 
 export const BioEditor = styled.textarea`
   max-width: 100%;
+  min-width: 100%;
   width: 100%;
   min-height: 50px;
 `;

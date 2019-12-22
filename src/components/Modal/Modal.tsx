@@ -13,6 +13,7 @@ import {
   NameField,
   ProfileFields,
   Save,
+  SaveContainer,
   Username
 } from './styles';
 
@@ -24,7 +25,6 @@ class Modal extends Component<{}, { editMode: boolean; bio: string }> {
       editMode: false,
       bio: ''
     };
-    // const { hideUserModal } = useModal();
 
     this.toggleEdit = this.toggleEdit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -68,7 +68,9 @@ class Modal extends Component<{}, { editMode: boolean; bio: string }> {
             {editMode ? (
               <Fragment>
                 <BioEditor value={bio} onChange={this.handleChange} />
-                <Save>Save</Save>
+                <SaveContainer>
+                  <Save>Save</Save>
+                </SaveContainer>
               </Fragment>
             ) : (
               `I love coding! JavaScript and React are my favorite. When I'm not coding, you can catch me traveling or playing ukulele.`
@@ -76,37 +78,10 @@ class Modal extends Component<{}, { editMode: boolean; bio: string }> {
             {/* {bio} */}
           </Bio>
         </ProfileFields>
-        {/* <Exit onClick={() => hideUserModal()}>&times;</Exit> */}
+        <Exit>&times;</Exit>
       </Container>
     );
   }
 }
-
-// const Modal = () => {
-//   const { hideUserModal } = useModal();
-
-//   return (
-//     <Container>
-//       <Avatar src='https://avatars3.githubusercontent.com/u/36962434?v=4' />
-//       <ProfileFields>
-//         <NameField>Username</NameField>
-//         <Username>
-//           JacksonCohen
-//           {/* {username} */}
-//         </Username>
-//         <BioField>
-//           Bio
-//           <Edit src='/assets/pencil-icon.png' />
-//         </BioField>
-//         <Bio>
-//           I love coding! JavaScript and React are my favorite. When I'm not coding, you can catch me
-//           traveling or playing ukulele.
-//           {/* {bio} */}
-//         </Bio>
-//       </ProfileFields>
-//       <Exit onClick={() => hideUserModal()}>&times;</Exit>
-//     </Container>
-//   );
-// };
 
 export default Modal;
