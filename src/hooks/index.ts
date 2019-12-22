@@ -2,17 +2,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../actions/actionTypes';
 import { AppState } from '../store';
 
+// update the users based on the criteria selected
 export const useUserList = (username: string): any => {
   const dispatch = useDispatch();
-  const userList = useSelector((state: AppState) => state.user);
-  // const criteria = useSelector((state: AppState) => state.criteria)
+  const users = useSelector((state: AppState) => state.user);
 
   return {
-    userList
-    // setUserList: dispatch({ type: types.UPDATE_USER_LIST, users })
+    users,
+    setUserList: (criteria: string) => dispatch({ type: types.UPDATE_USER_LIST, users, criteria })
   };
 };
 
+// update the criteria for which users are being displayed
 export const useSearchCriteria = (): {
   criteria: string;
   updateSearchCriteria: any;
@@ -27,6 +28,7 @@ export const useSearchCriteria = (): {
   };
 };
 
+// update the modal info based on the user that has been clicked
 export const useUserModal = (): {
   login: string;
   avatar_url: string;
@@ -66,6 +68,7 @@ export const useAuthenticatedUser = (): {
   };
 };
 
+// add authenticated user info to rest of users in directory
 export const useAuthenticatedUserInfo = () => {
   const dispatch = useDispatch();
   const { login, avatar_url, bio } = useSelector((state: AppState) => state.user);
@@ -78,6 +81,7 @@ export const useAuthenticatedUserInfo = () => {
   };
 };
 
+// toggle the modal
 export const useModal = (): {
   isModalShowing: boolean;
   showUserModal: Function;

@@ -57,7 +57,7 @@ class Modal extends Component<
 
     return (
       <Container>
-        <Avatar src='https://avatars3.githubusercontent.com/u/36962434?v=4' />
+        <Avatar src='https://avatars3.githubusercontent.com/u/36962434?v=4' /* {avatar} */ />
         <ProfileFields>
           <NameField>Username</NameField>
           <Username>

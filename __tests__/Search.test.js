@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import Search from '../src/components/Search';
+import Search from '../src/components/Search/Search';
 
 beforeEach(cleanup);
 
