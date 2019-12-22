@@ -12,6 +12,11 @@ export const Container = styled.div`
   animation-name: animatetop;
   animation-duration: 0.4s;
 
+  @media (max-width: 768px) {
+    width: 70%;
+    left: 15%;
+  }
+
   @keyframes animatetop {
     from {
       top: -300px;
@@ -36,7 +41,7 @@ export const Avatar = styled.img`
 
 export const NameField = styled.div`
   align-items: center;
-  margin: 3% 10%;
+  margin: 8px 35px;
   border-bottom: 1px solid #000;
   width: 80%;
   color: #b3b8bc;
@@ -45,13 +50,13 @@ export const NameField = styled.div`
 export const Username = styled.div`
   /* content: ''; */
   flex: 1 1 auto;
-  margin-left: 10%;
+  margin-left: 35px;
   color: #b3b8bc;
 `;
 
 export const BioField = styled.div`
   align-items: center;
-  margin: 3% 10%;
+  margin: 8px 35px;
   border-bottom: 1px solid #000;
   width: 80%;
   color: #b3b8bc;
@@ -60,7 +65,7 @@ export const BioField = styled.div`
 export const Bio = styled.div`
   color: #b3b8bc;
   flex: 1 1 auto;
-  margin-left: 10%;
+  margin-left: 35px;
   width: 80%;
 `;
 
