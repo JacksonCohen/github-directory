@@ -10,4 +10,5 @@ export const UPDATE_USER_LIST = 'UPDATE_USER_LIST';
 export const SHOW_USER_MODAL = 'SHOW_USER_MODAL';
 export const HIDE_USER_MODAL = 'HIDE_USER_MODAL';
 
+// create a dynamic type for data in reducers
 export type AppActions = UserActionTypes | ModalActionTypes | SearchCriteriaActionTypes;
