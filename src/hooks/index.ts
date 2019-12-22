@@ -5,15 +5,13 @@ import { AppState } from '../store';
 export const useUserList = (username: string): any => {
   const dispatch = useDispatch();
   const userList = useSelector((state: AppState) => state.user);
+  // const criteria = useSelector((state: AppState) => state.criteria)
 
-  return fetch(`https://api.github.com/users/${username}/followers`)
-    .then(res => res.json())
-    .then(users => {
-      return {
-        userList,
-        setUserList: dispatch({ type: types.UPDATE_USER_LIST, users })
-      };
-    });
+  //   return {
+  //     userList,
+  //     setUserList: dispatch({ type: types.UPDATE_USER_LIST, users })
+  //   };
+  // });
 };
 
 export const useUserModal = (): {
@@ -25,16 +23,15 @@ export const useUserModal = (): {
   const dispatch = useDispatch();
   const userState = useSelector((state: AppState) => state.user);
   const { login, avatar_url } = userState;
+  // bio is an optional field
   const bio = userState.bio || '';
 
   return {
     login,
     avatar_url,
     bio,
-    setUserModal: (login: string, avatar_url: string, bio: string) => {
-      console.log(login, avatar_url, bio);
-      return dispatch({ type: types.SET_CURRENT_USER_VIEW, login, avatar_url, bio });
-    }
+    setUserModal: (login: string, avatar_url: string, bio: string) =>
+      dispatch({ type: types.SET_CURRENT_USER_VIEW, login, avatar_url, bio })
   };
 };
 
@@ -45,11 +42,21 @@ export const useAuthenticatedUser = (): {
 } => {
   const dispatch = useDispatch();
   const userState = useSelector((state: AppState) => state.user);
+  // isAuthenticated is an optional field
   const isAuthenticated = userState.isAuthenticated || false;
 
   return {
     isAuthenticated,
     markUserAuthenticated: () => dispatch({ type: types.MARK_USER_AUTHENTICATED })
+  };
+};
+
+export const useAuthenticatedUserData = () => {
+  const dispatch = useDispatch();
+  const { login, avatar_url, bio } = useSelector((state: AppState) => state.user);
+
+  return {
+    setAuthenticatedUserData: dispatch
   };
 };
 

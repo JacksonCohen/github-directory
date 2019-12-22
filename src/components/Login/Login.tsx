@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import getAccessToken from '../../lib/getAccessToken';
 
 import { GitHubLogIn } from './styles';
 
